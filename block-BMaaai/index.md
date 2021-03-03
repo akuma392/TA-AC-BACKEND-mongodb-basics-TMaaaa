@@ -8,6 +8,8 @@ DB_NAME --collection COLLECTION_NAME --file cities.json(file location) --jsonArr
 (an array of json data)
 ```
 
+mongoimport --jsonArray --db users --collection userlist --file db.json
+
 host, username and password are optional fields.
 
 - --host : hostname // defaults to localhost:27017
@@ -26,16 +28,16 @@ Go to `https://www.json-generator.com/`
 ```js
 // paste this on left panel
 [
-  "{{repeat(30)}}",
+  '{{repeat(30)}}',
   {
-    _id: "{{objectId()}}",
-    age: "{{integer(20, 40)}}",
-    name: "{{firstName()}} {{surname()}}",
-    gender: "{{gender()}}",
-    company: "{{company().toUpperCase()}}",
-    email: "{{email()}}",
-    phone: "+1 {{phone()}}",
-    tags: ["{{repeat(2)}}", '{{lorem(1, "words")}}'],
+    _id: '{{objectId()}}',
+    age: '{{integer(20, 40)}}',
+    name: '{{firstName()}} {{surname()}}',
+    gender: '{{gender()}}',
+    company: '{{company().toUpperCase()}}',
+    email: '{{email()}}',
+    phone: '+1 {{phone()}}',
+    tags: ['{{repeat(2)}}', '{{lorem(1, "words")}}'],
   },
 ];
 ```
@@ -51,6 +53,8 @@ Go to `https://www.json-generator.com/`
 mongoexport --db state --collection cities --out ~/Desktop/states/city.json --jsonArray
 ```
 
+mongoexport --db users --collection userlist --out ~/Desktop/users/db.json --jsonArray
+
 ## BLOCK-writeCode
 
 Export `users` collection from `test` database onto `Desktop` in a file named `exported.json`.
@@ -60,6 +64,8 @@ Export `users` collection from `test` database onto `Desktop` in a file named `e
 ```
 mongoimport -d DB_NAME -c COLLECTION_NAME --type csv --file elections.csv(file location) --headerline(including header)
 ```
+
+mongoimport -d test -c data --type csv --file convertcsv.csv --headerline
 
 ## BLOCK-writeCode
 
