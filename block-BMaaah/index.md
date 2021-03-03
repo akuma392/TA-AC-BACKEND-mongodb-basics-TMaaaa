@@ -4,8 +4,8 @@ Write code to execute below expressions.
 
 1. Create a database named `blog`.
 
-use blog 2. Create a collection called 'articles'.
-db.createCollection("articles") 3. Insert multiple documents(at least 3) into articles. It should have fields
+2. Create a collection called 'articles'.
+3. Insert multiple documents(at least 3) into articles. It should have fields
 
 - title as string
 - createdAt as date
@@ -52,37 +52,32 @@ db.articles.find().pretty()
 
 4. Find all the articles using `db.COLLECTION_NAME.find()`
 
-> db.articles.find() 5. Find a document using \_id field. 6. 1. Find documents using title
-> db.articles.find({title:"Article1"}).pretty() 7. 2. Find documents using author's name field. 8. Find document using a specific tag.
-
-> db.articles.find({tags :["html","CSS"]}).pretty();
+5. Find a document using \_id field.
+6. 1. Find documents using title
+7. 2. Find documents using author's name field.
+8. Find document using a specific tag.
 
 9. Update title of a document using its \_id field.
-   > db.articles.update({\_id:ObjectId("603f591e8f168da2f6440a6c")},{$set :{title:"Article3"}})
+   >
 10. Update a author's name using article's title.
-
-db.articles.update({"author.name" : "Abc"},{title:"Node.js"})
 
 11. rename details field to description from all articles in articles collection.
 12. Add additional tag in a specific document.
 
-    > db.articles.update({title:"Article2"},{$push:{tags:"mongo"}})
+    >
 
 13. Update an article's title using $set and without $set.
-    > db.articles.update({\_id:ObjectId("603f591e8f168da2f6440a6c")},{$set :{title:"Article3"}})
 
-> db.articles.update({\_id:ObjectId("603f591e8f168da2f6440a6c")},{title:"Article3"})
+>
 
 - Write the differences here ?
   if we use $set it will replace the existing object and if we dont use $set it will replace entire object
 
 13. find an article using title and increment it's auhtor's age by 5.
 
-> db.articles.update({title:"Article2"},{$inc:{"author.age":5}})
+>
 
 14. Delete a document using \_id field with `db.COLLECTION_NAME.remove()`.
-
-db.articles.remove({-id:ObjectId("603f591e8f168da2f6440a6c")})
 
 // Sample data
 
